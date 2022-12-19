@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Paths = () => {
   return (
@@ -16,6 +17,7 @@ const Paths = () => {
         <button className="btn btn-success w-50">FullStack</button>
         <button className="btn btn-warning w-50">Aws-Devops</button>
       </div>
+      <Outlet />
     </div>
   );
 };

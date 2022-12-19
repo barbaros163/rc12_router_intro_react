@@ -7,6 +7,8 @@ import People from "./pages/People";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Paths from "./pages/Paths";
 import PersonDetail from "./pages/PersonDetail";
+import FullStack from "./pages/FullStack";
+import Aws from "./pages/Aws";
 
 //? Link, NavLink ve Navigate componentleri declerative routing
 //? gerceklestirmek icin kullanilir.
@@ -27,14 +29,21 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/people/:id" element={<PersonDetail />} />
-        <Route path="/paths" element={<Paths />} />
+        <Route index element={<Home />} />
+        <Route path="people" element={<People />} />
+        <Route path="people/:id" element={<PersonDetail />} />
+
+        {/* nested route */}
+        <Route path="paths" element={<Paths />}>
+          <Route path="fullstack" element={<FullStack />} />
+          <Route path="aws" element={<Aws />} />
+        </Route>
+
         <Route path="/contact" element={<Contact />} />
         {/* <Route path="*" element={<NotFound />} /> */}
-        <Route path="*" element={<Navigate to="/" />} />
+
         {/* Redirect islemleri icin Navigate componenti kullanilabilir */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
       <Footer />
