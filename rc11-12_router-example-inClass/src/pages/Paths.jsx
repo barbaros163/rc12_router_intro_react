@@ -15,7 +15,8 @@ const Paths = () => {
         experts!
       </p>
       <div>
-        <Link className="btn btn-success w-50" to="fullstack">
+        <Link className="btn btn-success w-50" to="">
+          {/* <Link className="btn btn-success w-50" to="fullstack"> */}
           FullStack
         </Link>
         <button
